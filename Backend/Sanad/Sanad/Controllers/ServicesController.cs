@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Sanad.Data;
@@ -11,39 +15,79 @@ namespace Sanad.Controllers
     [ApiController]
     public class ServicesController : ControllerBase
     {
-        private readonly ApplicationDbContext dbContext;
+        private readonly ApplicationDbContext _dbContext;
 
         public ServicesController(ApplicationDbContext dbContext)
         {
-            this.dbContext = dbContext;
+            _dbContext = dbContext;
         }
 
+        // GET: api/Services?lang=ar
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ServiceDto>>> GetServices()
+        public async Task<ActionResult<IEnumerable<ServiceDto>>> GetServices(
+            [FromQuery] string lang = "en")
         {
-            var services = await dbContext.Services
+            var list = await _dbContext.Services
                 .Select(s => new ServiceDto
                 {
-                    Id = s.Id,
-                    Title = s.Title,
-                    Description = s.Description,
-                    Details = s.Details
+                    Id          = s.Id,
+                    Title       = lang == "ar" 
+                                    ? (s.TitleAr       ?? s.TitleEn) 
+                                    : (s.TitleEn       ?? s.TitleAr),
+                    Description = lang == "ar" 
+                                    ? (s.DescriptionAr ?? s.DescriptionEn) 
+                                    : (s.DescriptionEn ?? s.DescriptionAr),
+                    Details     = lang == "ar" 
+                                    ? (s.DetailsAr     ?? s.DetailsEn) 
+                                    : (s.DetailsEn     ?? s.DetailsAr),
+                    ImageUrl    = s.ImageUrl
                 })
                 .ToListAsync();
 
-            return Ok(services);
+            return Ok(list);
         }
-        [HttpPost("createService")]
-        public async Task<IActionResult> CreateService([FromForm] CreateUpdateServiceDto dto)
+
+        // GET: api/Services/{id}?lang=ar
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ServiceDto>> GetService(
+            int id,
+            [FromQuery] string lang = "en")
+        {
+            var s = await _dbContext.Services.FindAsync(id);
+            if (s == null) return NotFound(new { message = "Service not found" });
+
+            var dto = new ServiceDto
+            {
+                Id          = s.Id,
+                Title       = lang == "ar" 
+                                ? (s.TitleAr       ?? s.TitleEn) 
+                                : (s.TitleEn       ?? s.TitleAr),
+                Description = lang == "ar" 
+                                ? (s.DescriptionAr ?? s.DescriptionEn) 
+                                : (s.DescriptionEn ?? s.DescriptionAr),
+                Details     = lang == "ar" 
+                                ? (s.DetailsAr     ?? s.DetailsEn) 
+                                : (s.DetailsEn     ?? s.DetailsAr),
+                ImageUrl    = s.ImageUrl
+            };
+
+            return Ok(dto);
+        }
+
+        // POST: api/Services
+        [HttpPost]
+        public async Task<ActionResult<ServiceDto>> CreateService(
+            [FromForm] CreateUpdateServiceDto dto,
+            [FromQuery] string lang = "en")
         {
             string? fileName = null;
-
             if (dto.Image != null)
             {
                 var folder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "ServiceImages");
-                if (!Directory.Exists(folder)) Directory.CreateDirectory(folder);
+                if (!Directory.Exists(folder))
+                    Directory.CreateDirectory(folder);
 
-                fileName = Guid.NewGuid().ToString() + Path.GetExtension(dto.Image.FileName);
+                fileName = Guid.NewGuid() + Path.GetExtension(dto.Image.FileName);
                 var path = Path.Combine(folder, fileName);
 
                 using var stream = new FileStream(path, FileMode.Create);
@@ -52,85 +96,92 @@ namespace Sanad.Controllers
 
             var service = new Service
             {
-                Title = dto.Title,
-                Description = dto.Description,
-                ImageUrl = fileName != null ? $"/ServiceImages/{fileName}" : null,
-                Details = dto.Details,
+                TitleEn       = dto.TitleEn,
+                TitleAr       = dto.TitleAr,
+                DescriptionEn = dto.DescriptionEn,
+                DescriptionAr = dto.DescriptionAr,
+                DetailsEn     = dto.DetailsEn,
+                DetailsAr     = dto.DetailsAr,
+                ImageUrl      = fileName != null ? $"/ServiceImages/{fileName}" : null
             };
 
-            dbContext.Services.Add(service);
-            await dbContext.SaveChangesAsync();
+            _dbContext.Services.Add(service);
+            await _dbContext.SaveChangesAsync();
 
-            return Ok("Service created");
+            var result = new ServiceDto
+            {
+                Id          = service.Id,
+                Title       = lang == "ar" ? service.TitleAr : service.TitleEn,
+                Description = lang == "ar" ? service.DescriptionAr : service.DescriptionEn,
+                Details     = lang == "ar" ? service.DetailsAr : service.DetailsEn,
+                ImageUrl    = service.ImageUrl
+            };
+
+            return CreatedAtAction(nameof(GetService),
+                new { id = service.Id, lang }, result);
         }
 
-        [HttpPut("{id}/updateService")]
-        public async Task<IActionResult> UpdateService(int id, [FromForm] CreateUpdateServiceDto dto)
+        // PUT: api/Services/{id}
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateService(
+            int id,
+            [FromForm] CreateUpdateServiceDto dto,
+            [FromQuery] string lang = "en")
         {
-            var service = await dbContext.Services.FindAsync(id);
-            if (service == null) return NotFound("Service not found");
+            var service = await _dbContext.Services.FindAsync(id);
+            if (service == null) 
+                return NotFound(new { message = "Service not found" });
 
-            if (!string.IsNullOrWhiteSpace(dto.Title))
-                service.Title = dto.Title;
-
-            if (!string.IsNullOrWhiteSpace(dto.Description))
-                service.Description = dto.Description;
-
-            if (dto.Details != null && dto.Details.Any())
-                service.Details = dto.Details;
-
+            if (!string.IsNullOrWhiteSpace(dto.TitleEn))       service.TitleEn       = dto.TitleEn;
+            if (!string.IsNullOrWhiteSpace(dto.TitleAr))       service.TitleAr       = dto.TitleAr;
+            if (!string.IsNullOrWhiteSpace(dto.DescriptionEn)) service.DescriptionEn = dto.DescriptionEn;
+            if (!string.IsNullOrWhiteSpace(dto.DescriptionAr)) service.DescriptionAr = dto.DescriptionAr;
+            if (dto.DetailsEn    != null && dto.DetailsEn.Any()) service.DetailsEn = dto.DetailsEn;
+            if (dto.DetailsAr    != null && dto.DetailsAr.Any()) service.DetailsAr = dto.DetailsAr;
 
             if (dto.Image != null)
             {
-               
                 if (!string.IsNullOrEmpty(service.ImageUrl))
                 {
-                    var oldPath = Path.Combine("wwwroot", service.ImageUrl.TrimStart('/'));
-                    if (System.IO.File.Exists(oldPath))
-                        System.IO.File.Delete(oldPath);
+                    var old = Path.Combine("wwwroot", service.ImageUrl.TrimStart('/'));
+                    if (System.IO.File.Exists(old))
+                        System.IO.File.Delete(old);
                 }
 
-               
                 var folder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "ServiceImages");
                 if (!Directory.Exists(folder))
                     Directory.CreateDirectory(folder);
 
-                var fileName = Guid.NewGuid().ToString() + Path.GetExtension(dto.Image.FileName);
+                var fileName = Guid.NewGuid() + Path.GetExtension(dto.Image.FileName);
                 var path = Path.Combine(folder, fileName);
 
                 using var stream = new FileStream(path, FileMode.Create);
                 await dto.Image.CopyToAsync(stream);
-
                 service.ImageUrl = $"/ServiceImages/{fileName}";
             }
 
-            await dbContext.SaveChangesAsync();
-            return Ok("Service updated");
+            await _dbContext.SaveChangesAsync();
+            return Ok(new { message = "Service updated successfully" });
         }
 
-
-        [HttpDelete("{id}/deleteService")]
+        // DELETE: api/Services/{id}
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteService(int id)
         {
-            var service = await dbContext.Services.FindAsync(id);
-            if (service == null) return NotFound("Service not found");
+            var service = await _dbContext.Services.FindAsync(id);
+            if (service == null) 
+                return NotFound(new { message = "Service not found" });
 
-            
             if (!string.IsNullOrEmpty(service.ImageUrl))
             {
-                var path = Path.Combine("wwwroot", service.ImageUrl.TrimStart('/'));
-                if (System.IO.File.Exists(path))
-                    System.IO.File.Delete(path);
+                var file = Path.Combine("wwwroot", service.ImageUrl.TrimStart('/'));
+                if (System.IO.File.Exists(file))
+                    System.IO.File.Delete(file);
             }
 
-            dbContext.Services.Remove(service);
-            await dbContext.SaveChangesAsync();
-
-            return Ok("Service deleted");
+            _dbContext.Services.Remove(service);
+            await _dbContext.SaveChangesAsync();
+            return Ok(new { message = "Service deleted successfully" });
         }
-
-
-
-
     }
 }
