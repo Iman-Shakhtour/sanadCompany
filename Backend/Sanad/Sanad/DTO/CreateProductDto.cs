@@ -35,6 +35,9 @@ namespace Sanad.DTO
         [FromForm(Name = "category")]
         public string? Category { get; set; } = string.Empty;
 
+        [FromForm(Name = "categoryAr")]
+        public string? CategoryAr { get; set; } = string.Empty;
+
         [FromForm(Name = "tags")]
         public string? Tags { get; set; }
 

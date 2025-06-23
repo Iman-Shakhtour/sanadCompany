@@ -44,7 +44,7 @@ namespace Sanad.Controllers
                     LongDescription = lang == "ar" ? p.LongDescriptionAr : p.LongDescription,
                     ImageUrl = p.ImageUrl,
                     Year = p.Year,
-                    Category = p.Category,
+                    Category = lang == "ar" ? p.CategoryAr : p.Category,
                     Thumbnails = p.Thumbnails,
                     Tags = p.Tags,
                     BuyLink = p.BuyLink,
@@ -72,7 +72,7 @@ namespace Sanad.Controllers
                     LongDescription = lang == "ar" ? p.LongDescriptionAr : p.LongDescription,
                     ImageUrl = p.ImageUrl,
                     Year = p.Year,
-                    Category = p.Category,
+                    Category = lang == "ar" ? p.CategoryAr : p.Category,
                     Thumbnails = p.Thumbnails,
                     Tags = p.Tags,
                     BuyLink = p.BuyLink,
@@ -139,6 +139,7 @@ namespace Sanad.Controllers
                 LongDescriptionAr = dto.LongDescriptionAr,
                 Year = dto.Year ?? 0,
                 Category = dto.Category,
+                CategoryAr = dto.CategoryAr ?? string.Empty,
                 ImageUrl = fileName,
                 Thumbnails = thumbnailsUrls.Any() ? JsonSerializer.Serialize(thumbnailsUrls) : null,
                 Tags = dto.Tags,
@@ -184,6 +185,9 @@ namespace Sanad.Controllers
 
             if (!string.IsNullOrEmpty(dto.Category))
                 product.Category = dto.Category;
+            
+            if (!string.IsNullOrEmpty(dto.CategoryAr))
+                product.CategoryAr = dto.CategoryAr!;
 
             if (!string.IsNullOrEmpty(dto.Tags))
                 product.Tags = dto.Tags;

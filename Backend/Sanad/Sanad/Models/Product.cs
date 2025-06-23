@@ -18,6 +18,10 @@
         public int Year { get; set; }
         public string Category { get; set; } = string.Empty;
 
+        public string CategoryAr { get; set; } = string.Empty;
+
+
+        
 
         public string? Thumbnails { get; set; } // JSON أو comma-separated
         public string? Tags { get; set; }        // "AI,Marketing,SEO"

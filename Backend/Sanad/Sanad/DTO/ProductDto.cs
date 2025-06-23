@@ -9,6 +9,8 @@ namespace Sanad.DTO
         public string? ImageUrl { get; set; }
         public int Year { get; set; }
         public string Category { get; set; } = string.Empty;
+
+        
         public string? Thumbnails { get; set; }
         public string? BuyLink { get; set; }
         public string? Tags { get; set; }
