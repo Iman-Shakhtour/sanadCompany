@@ -80,24 +80,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const path = window.location.pathname;
 
-    // كشف اللغة من المسار النسبي (يحتوي على "ar/")
     const isArabic = path.includes("/ar/");
     const currentLang = isArabic ? "ar" : "en";
-
-    // استخراج اسم الصفحة الحالي (مثلاً "about.html")
     const currentPage = path.substring(path.lastIndexOf("/") + 1) || "index.html";
 
-    // تغيير نص الزر
     langToggle.textContent = isArabic ? "English" : "العربية";
 
     langToggle.addEventListener("click", () => {
       let newPath;
 
       if (currentLang === "ar") {
-        // من العربية إلى الإنجليزية (الخروج من مجلد ar)
+        // من العربي للإنجليزي
         newPath = `../${currentPage}`;
       } else {
-        // من الإنجليزية إلى العربية (الدخول إلى مجلد ar)
+        // من الإنجليزي للعربي
         newPath = `ar/${currentPage}`;
       }
 
@@ -108,4 +104,3 @@ document.addEventListener("DOMContentLoaded", function () {
   setupLangToggle("langToggle");
   setupLangToggle("langToggle1");
 });
-

@@ -89,6 +89,10 @@
       "PackagePath": "staticwebassets\\ProductImages\\ec9f3962-2908-45ed-83ef-f6d9b7678a38.png"
     },
     {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\fadc57ba-8097-4005-8315-3863d215f2ad.png",
+      "PackagePath": "staticwebassets\\ProductImages\\fadc57ba-8097-4005-8315-3863d215f2ad.png"
+    },
+    {
       "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\ff05a0a1-c44f-42c2-9f58-8975c6967b4b.png",
       "PackagePath": "staticwebassets\\ProductImages\\ff05a0a1-c44f-42c2-9f58-8975c6967b4b.png"
     },
@@ -103,6 +107,10 @@
     {
       "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\it-company-ahmedabad.jpeg",
       "PackagePath": "staticwebassets\\ProductImages\\it-company-ahmedabad.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ServiceImages\\702e9d7d-4d6e-4a5c-aa58-19fb0725e11b.png",
+      "PackagePath": "staticwebassets\\ServiceImages\\702e9d7d-4d6e-4a5c-aa58-19fb0725e11b.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Sanad.Microsoft.AspNetCore.StaticWebAssets.props",

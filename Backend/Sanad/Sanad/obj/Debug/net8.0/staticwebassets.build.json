@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xlugDu1J0hp9+VX/LA2T/4XW5ghlBDCBI4Q4s37rAWU=",
+  "Hash": "/xhWwtgkOsmgcWEbPycXgD5OQr2vab/aoC08RaU6UQU=",
   "Source": "Sanad",
   "BasePath": "_content/Sanad",
   "Mode": "Default",
@@ -435,6 +435,25 @@
       "OriginalItemSpec": "wwwroot\\ProductImages\\ec9f3962-2908-45ed-83ef-f6d9b7678a38.png"
     },
     {
+      "Identity": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\fadc57ba-8097-4005-8315-3863d215f2ad.png",
+      "SourceId": "Sanad",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\",
+      "BasePath": "_content/Sanad",
+      "RelativePath": "ProductImages/fadc57ba-8097-4005-8315-3863d215f2ad.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProductImages\\fadc57ba-8097-4005-8315-3863d215f2ad.png"
+    },
+    {
       "Identity": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\ff05a0a1-c44f-42c2-9f58-8975c6967b4b.png",
       "SourceId": "Sanad",
       "SourceType": "Discovered",
@@ -509,6 +528,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ProductImages\\it-company-ahmedabad.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ServiceImages\\702e9d7d-4d6e-4a5c-aa58-19fb0725e11b.png",
+      "SourceId": "Sanad",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\",
+      "BasePath": "_content/Sanad",
+      "RelativePath": "ServiceImages/702e9d7d-4d6e-4a5c-aa58-19fb0725e11b.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ServiceImages\\702e9d7d-4d6e-4a5c-aa58-19fb0725e11b.png"
     }
   ]
 }
