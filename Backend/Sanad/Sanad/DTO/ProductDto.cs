@@ -1,27 +1,17 @@
-﻿namespace Sanad.Models
+namespace Sanad.DTO
 {
-    public class Product
+    public class ProductDto
     {
         public int Id { get; set; }
         public string Title { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public string? LongDescription { get; set; }
-
-        // ───── New Arabic fields ─────
-        public string TitleAr { get; set; } = string.Empty;
-        public string DescriptionAr { get; set; } = string.Empty;
-        public string? LongDescriptionAr { get; set; }
-
-
-
         public string? ImageUrl { get; set; }
         public int Year { get; set; }
         public string Category { get; set; } = string.Empty;
-
-
-        public string? Thumbnails { get; set; } // JSON أو comma-separated
-        public string? Tags { get; set; }        // "AI,Marketing,SEO"
+        public string? Thumbnails { get; set; }
         public string? BuyLink { get; set; }
+        public string? Tags { get; set; }
         public string? DetailsLink { get; set; }
         public string? DemoLink { get; set; }
     }

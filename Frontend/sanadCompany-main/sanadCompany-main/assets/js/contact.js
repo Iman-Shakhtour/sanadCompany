@@ -1,38 +1,95 @@
 
-  document.getElementById("contactForm").addEventListener("submit", async function (e) {
-    e.preventDefault(); 
+  // document.getElementById("contactForm").addEventListener("submit", async function (e) {
+  //   e.preventDefault(); 
 
    
-    const name = document.getElementById("name").value;
-    const userEmail = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
-    const message = document.getElementById("message").value;
+  //   const name = document.getElementById("name").value;
+  //   const userEmail = document.getElementById("email").value;
+  //   const phone = document.getElementById("phone").value;
+  //   const message = document.getElementById("message").value;
 
    
-    const emailData = {
+  //   const emailData = {
+  //     subject: `New message from ${name}`,
+  //     body: `Name: ${name}\nEmail: ${userEmail}\nPhone: ${phone}\n\nMessage:\n${message}`,
+  //     recivers: "lojienbarrham@gmail.com"
+  //   };
+
+  //   try {
+  //     const response = await fetch("http://localhost:5261/api/contact/send", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       },
+  //       body: JSON.stringify(emailData)
+  //     });
+
+  //     if (response.ok) {
+  //       alert("✅ Message sent successfully!");
+  //       document.getElementById("contactForm").reset();
+  //     } else {
+  //       const result = await response.json();
+  //       alert("❌ Failed to send message: " + result.message);
+  //     }
+  //   } catch (error) {
+  //     alert("❌ Error: " + error.message);
+  //   }
+  // });
+
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const userEmail = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const message = document.getElementById("message").value;
+
+  // تحديد اللغة من العنصر <html lang="...">
+  const lang = document.documentElement.lang || "en";
+
+  // إعداد النصوص حسب اللغة
+  const labels = {
+    ar: {
+      subject: `رسالة جديدة من ${name}`,
+      body: `الاسم: ${name}\nالبريد الإلكتروني: ${userEmail}\nرقم الهاتف: ${phone}\n\nالرسالة:\n${message}`,
+      success: "✅ تم إرسال الرسالة بنجاح!",
+      fail: "❌ فشل في إرسال الرسالة: ",
+      error: "❌ حدث خطأ: "
+    },
+    en: {
       subject: `New message from ${name}`,
       body: `Name: ${name}\nEmail: ${userEmail}\nPhone: ${phone}\n\nMessage:\n${message}`,
-      recivers: "lojienbarrham@gmail.com"
-    };
-
-    try {
-      const response = await fetch("http://localhost:5261/api/contact/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(emailData)
-      });
-
-      if (response.ok) {
-        alert("✅ Message sent successfully!");
-        document.getElementById("contactForm").reset();
-      } else {
-        const result = await response.json();
-        alert("❌ Failed to send message: " + result.message);
-      }
-    } catch (error) {
-      alert("❌ Error: " + error.message);
+      success: "✅ Message sent successfully!",
+      fail: "❌ Failed to send message: ",
+      error: "❌ Error: "
     }
-  });
+  };
 
+  const t = labels[lang] || labels.en;
+
+  const emailData = {
+    subject: t.subject,
+    body: t.body,
+    recivers: "lojienbarrham@gmail.com"
+  };
+
+  try {
+    const response = await fetch("http://localhost:5261/api/contact/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(emailData)
+    });
+
+    if (response.ok) {
+      alert(t.success);
+      document.getElementById("contactForm").reset();
+    } else {
+      const result = await response.json();
+      alert(t.fail + result.message);
+    }
+  } catch (error) {
+    alert(t.error + error.message);
+  }
+});

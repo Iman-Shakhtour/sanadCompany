@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("http://localhost:5261/api/Services") 
+  const lang = document.documentElement.lang || 'en';
+  fetch(`http://localhost:5261/api/Services?lang=${lang}`) 
     .then(response => response.json())
     .then(services => {
       const container = document.getElementById("servicesContainer");

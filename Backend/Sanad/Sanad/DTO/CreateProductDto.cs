@@ -13,6 +13,16 @@ namespace Sanad.DTO
         [FromForm(Name = "longdescription")]
         public string? LongDescription { get; set; }
 
+         // ── NEW ARABIC FIELDS ──
+        [FromForm(Name = "titleAr")]
+        public string? TitleAr { get; set; }
+
+        [FromForm(Name = "descriptionAr")]
+        public string? DescriptionAr { get; set; }
+
+        [FromForm(Name = "longdescriptionAr")]
+        public string? LongDescriptionAr { get; set; }
+
         [FromForm(Name = "imageurl")]
         public IFormFile? ImageUrl { get; set; }
 
