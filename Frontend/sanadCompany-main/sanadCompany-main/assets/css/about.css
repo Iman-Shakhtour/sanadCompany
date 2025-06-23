@@ -1,16 +1,20 @@
 body {
     margin: 0;
     padding: 0;
-     background-color: #19375C;
-      scroll-behavior: auto; /* نعطل behavior العادي */
+    background-color: #19375C;
+    scroll-behavior: auto; /* نعطل behavior العادي */
+    padding-top: 60px; /* إضافة مسافة أعلى لتجنب التداخل مع الـ navbar الثابت */
 }
-
 
 /* header */
 .navbar {
     background-color: #4175B0;
+    position: fixed; /* جعل الشريط ثابتًا */
+    top: 0; /* لصق في أعلى الشاشة */
+    width: 100%; /* يمتد على عرض الشاشة الكامل */
+    z-index: 1000; /* لضمان أن يكون فوق المحتوى الأخرى */
 }
- 
+
 .logo-navbar {
     width: 90px;
     height: 90px;
@@ -21,12 +25,10 @@ body {
     top: 40px;
 }
 .ar-en:hover {
-    
-color: white !important;
+    color: white !important;
 }
 .navbar a {
-        transition: all 0.5s linear;
-
+    transition: all 0.5s linear;
 }
  /* to navbar on small screen */
 

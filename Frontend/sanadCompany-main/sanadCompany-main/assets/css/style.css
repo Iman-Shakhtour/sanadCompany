@@ -1,39 +1,52 @@
+
+/* header */
+
+/* تعديل body لمنع التداخل مع الـ navbar الثابت */
 body {
     margin: 0;
     padding: 0;
-     scroll-behavior: auto; /* نعطل behavior العادي */
+    scroll-behavior: auto; /* نعطل behavior العادي */
+    padding-top: 60px; /* إضافة مسافة أعلى بناءً على ارتفاع الـ navbar */
 }
+
 /* header */
-
-
 header {
     background-image: url("../../testImg/3.jpg");
     min-height: 110vh;
     background-size: cover;
+position: relative;
+    padding-top: 80px; /* لضمان أن المحتوى الداخلي يتم وضعه نسبيًا */
 }
+
 .header-main-div {
-     min-height: 110vh;
-} 
+    min-height: 110vh;
+}
+
 .logo-navbar {
     width: 90px;
     height: 90px;
 }
+
 .ar-en {
     transition: color 0.5s linear;
     left: 120px;
     top: 40px;
 }
+
 .ar-en:hover {
-    
-color: white !important;
+    color: white !important;
 }
+
 .navbar a {
-        transition: all 0.5s linear;
-
+    transition: all 0.5s linear;
 }
-.navbar {
-        background-color: #4175B0;
 
+.navbar {
+    background-color: #4175B0;
+    position: fixed; /* جعل الشريط ثابتًا */
+    top: 0; /* لصق في أعلى الشاشة */
+    width: 100%; /* يمتد على عرض الشاشة الكامل */
+    z-index: 1000; /* لضمان أن يكون فوق المحتوى الأخرى */
 }
  /* to navbar on small screen */
 
