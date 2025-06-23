@@ -1,48 +1,56 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const lang = window.location.pathname.includes('/ar') ? 'ar' : 'en';
 
-  async function loadServices() {
-    try {
-      const res = await fetch('http://localhost:5261/api/Services');
-      const services = await res.json();
+  loadServices(lang);
+  loadServices2(lang);
+});
 
-      const container = document.getElementById('services-section');
-
-      services.forEach(service => {
-        
-        const h5 = document.createElement('h5');
-        h5.className = 'text-white mt-4';
-        h5.textContent = service.title;
-        container.appendChild(h5);
-
-      
-        if (service.details && service.details.length > 0) {
-          const ul = document.createElement('ul');
-          ul.className = 'text-white-50';
-
-          service.details.forEach(detail => {
-            const li = document.createElement('li');
-            li.innerText = detail;
-            ul.appendChild(li);
-          });
-
-          container.appendChild(ul);
-        }
-      });
-
-      const finalText = document.createElement('p');
-      finalText.className = 'text-white-50 mt-4';
-      finalText.innerHTML = ` At Sanad Company, we are not just a service provider — we are an active strategic partner in leading your digital success and growth powered by AI. Whether you are starting out or expanding, we offer smart solutions that grow with your business.`;
-      container.appendChild(finalText);
-
-    } catch (error) {
-      console.error('Failed to load services:', error);
-    }
-  }
-async function loadServices2() {
+async function loadServices(lang) {
   try {
-    const res = await fetch('http://localhost:5261/api/Services');
+    const res = await fetch(`http://localhost:5261/api/Services?lang=${lang}`);
     const services = await res.json();
+    const container = document.getElementById('services-section');
+    container.innerHTML = '';
 
+    services.forEach(service => {
+      const h5 = document.createElement('h5');
+      h5.className = 'text-white mt-4';
+      h5.textContent = service.title;
+      container.appendChild(h5);
+
+      if (Array.isArray(service.details) && service.details.length > 0) {
+        const ul = document.createElement('ul');
+        ul.className = 'text-white-50';
+
+        service.details.forEach(detail => {
+          const li = document.createElement('li');
+          li.innerText = detail;
+          ul.appendChild(li);
+        });
+
+        container.appendChild(ul);
+      }
+    });
+
+    const finalText = document.createElement('p');
+    finalText.className = 'text-white-50 mt-4';
+    finalText.innerHTML = lang === 'ar'
+      ? `في شركة سند، لسنا مجرد مزود خدمة — بل شريك استراتيجي نشط في قيادة نجاحك الرقمي ونموك المدعوم بالذكاء الاصطناعي.`
+      : `At Sanad Company, we are not just a service provider — we are a strategic partner in your digital growth.`;
+
+    container.appendChild(finalText);
+
+  } catch (error) {
+    console.error('Error loading services section:', error);
+  }
+}
+
+async function loadServices2(lang) {
+  try {
+    const res = await fetch(`http://localhost:5261/api/Services?lang=${lang}`);
+    const services = await res.json();
     const container = document.getElementById('servicesContainer');
+    container.innerHTML = '';
 
     services.forEach(service => {
       const col = document.createElement('div');
@@ -65,11 +73,10 @@ async function loadServices2() {
       const description = document.createElement('p');
       description.className = 'card-text small text-white-50 mt-3';
 
-      // دمج التفاصيل مع فواصل أو أسطر جديدة
-      if (service.details && service.details.length > 0) {
+      if (Array.isArray(service.details) && service.details.length > 0) {
         description.innerHTML = service.details.map(d => `<span>${d}</span>`).join('<br>');
       } else {
-        description.innerText = 'No details available.';
+        description.innerText = lang === 'ar' ? 'لا توجد تفاصيل.' : 'No details available.';
       }
 
       cardBody.appendChild(title);
@@ -81,12 +88,6 @@ async function loadServices2() {
     });
 
   } catch (error) {
-    console.error('Failed to load services:', error);
+    console.error('Error loading services grid:', error);
   }
 }
-
-document.addEventListener('DOMContentLoaded', loadServices);
-
-  
-  document.addEventListener('DOMContentLoaded', loadServices2);
-

@@ -1,5 +1,49 @@
 //  to change the color of navbar-iten in hover
- 
+ // ─── PRODUCTS LOADER ───
+const lang = document.documentElement.lang || 'en';
+const BASE_API = `http://localhost:5261/api/products?lang=${lang}`;
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadProducts(BASE_API,            "all-products");
+  loadProducts(`${BASE_API}&year=2023`, "products-2023");
+  loadProducts(`${BASE_API}&year=2024`, "products-2024");
+  loadProducts(`${BASE_API}&category=ai`,     "products-ai");
+  loadProducts(`${BASE_API}&category=health`, "products-health");
+});
+
+function loadProducts(endpoint, containerId) {
+  fetch(endpoint)
+    .then(r => r.json())
+    .then(products => {
+      const c = document.getElementById(containerId);
+      if (!c) return;
+      c.innerHTML = products.length
+        ? products.map(p => createProductCard(p)).join("")
+        : `<div class="text-${lang==='ar'?'white':'dark'}">
+             ${lang==='ar'?'لا توجد منتجات':'No products found'}.
+          </div>`;
+    })
+    .catch(err => console.error("Error fetching products:", err));
+}
+
+function createProductCard(p) {
+  return `
+    <div class="col-md-4 product-card">
+      <div class="card h-100 bg-dark text-white">
+        <img src="http://localhost:5261/ProductImages/${p.imageUrl}"
+             class="card-img-top" alt="${p.title}">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">${p.title}</h5>
+          <p class="card-text">${p.description}</p>
+          <a href="${p.detailsLink||'#'}" class="btn btn-outline-light mt-auto">
+            ${lang==='ar'?'اقرأ المزيد':'Read More'}
+          </a>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
  const navItems = document.querySelectorAll("#navList .nav-item");
 
     navItems.forEach(item => {

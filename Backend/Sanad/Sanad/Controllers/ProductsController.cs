@@ -22,7 +22,10 @@ namespace Sanad.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> GetAll([FromQuery] int? year, [FromQuery] string? category)
+        public async Task<ActionResult<IEnumerable<ProductDto>>> GetAll(
+            [FromQuery] int? year,
+            [FromQuery] string? category,
+            [FromQuery] string lang = "en")
         {
             var query = dbContext.Products.AsQueryable();
 
@@ -32,20 +35,58 @@ namespace Sanad.Controllers
             if (!string.IsNullOrWhiteSpace(category))
                 query = query.Where(p => p.Category.ToLower() == category.ToLower());
 
-            var products = await query.ToListAsync();
+            var products = await query
+                .Select(p => new ProductDto
+                {
+                    Id = p.Id,
+                    Title = lang == "ar" ? p.TitleAr : p.Title,
+                    Description = lang == "ar" ? p.DescriptionAr : p.Description,
+                    LongDescription = lang == "ar" ? p.LongDescriptionAr : p.LongDescription,
+                    ImageUrl = p.ImageUrl,
+                    Year = p.Year,
+                    Category = p.Category,
+                    Thumbnails = p.Thumbnails,
+                    Tags = p.Tags,
+                    BuyLink = p.BuyLink,
+                    DetailsLink = p.DetailsLink,
+                    DemoLink = p.DemoLink
+                })
+                .ToListAsync();
+
             return Ok(products);
         }
 
+
         [HttpGet("{id}/ProductDetails")]
-        public async Task<ActionResult<Product>> GetById(int id)
+        public async Task<ActionResult<ProductDto>> GetById(
+     int id,
+     [FromQuery] string lang = "en")
         {
-            var product = await dbContext.Products.FindAsync(id);
+            var product = await dbContext.Products
+                .Where(p => p.Id == id)
+                .Select(p => new ProductDto
+                {
+                    Id = p.Id,
+                    Title = lang == "ar" ? p.TitleAr : p.Title,
+                    Description = lang == "ar" ? p.DescriptionAr : p.Description,
+                    LongDescription = lang == "ar" ? p.LongDescriptionAr : p.LongDescription,
+                    ImageUrl = p.ImageUrl,
+                    Year = p.Year,
+                    Category = p.Category,
+                    Thumbnails = p.Thumbnails,
+                    Tags = p.Tags,
+                    BuyLink = p.BuyLink,
+                    DetailsLink = p.DetailsLink,
+                    DemoLink = p.DemoLink
+                })
+                .FirstOrDefaultAsync();
 
             if (product == null)
                 return NotFound("Product not found");
 
-            return Ok(product); 
+            return Ok(product);
         }
+
 
         [HttpPost("CreateProduct")]
         public async Task<IActionResult> CreateProduct([FromForm] CreateProductDto dto)
@@ -93,6 +134,9 @@ namespace Sanad.Controllers
                 Title = dto.Title,
                 Description = dto.Description,
                 LongDescription = dto.LongDescription,
+                TitleAr = dto.TitleAr ?? string.Empty,
+                DescriptionAr = dto.DescriptionAr ?? string.Empty,
+                LongDescriptionAr = dto.LongDescriptionAr,
                 Year = dto.Year ?? 0,
                 Category = dto.Category,
                 ImageUrl = fileName,
@@ -119,11 +163,21 @@ namespace Sanad.Controllers
             if (!string.IsNullOrEmpty(dto.Title))
                 product.Title = dto.Title;
 
+            if (!string.IsNullOrEmpty(dto.TitleAr))
+                product.TitleAr = dto.TitleAr!;
+
+
             if (!string.IsNullOrEmpty(dto.Description))
                 product.Description = dto.Description;
 
+            if (!string.IsNullOrEmpty(dto.DescriptionAr))
+                product.DescriptionAr = dto.DescriptionAr!;
+
             if (!string.IsNullOrEmpty(dto.LongDescription))
                 product.LongDescription = dto.LongDescription;
+
+            if (!string.IsNullOrEmpty(dto.LongDescriptionAr))
+                product.LongDescriptionAr = dto.LongDescriptionAr;
 
             if (dto.Year.HasValue)
                 product.Year = dto.Year.Value;
@@ -198,7 +252,7 @@ namespace Sanad.Controllers
 
             var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "ProductImages");
 
-            
+
             if (!string.IsNullOrEmpty(product.ImageUrl))
             {
                 var imagePath = Path.Combine(uploadsFolder, product.ImageUrl);
@@ -206,7 +260,7 @@ namespace Sanad.Controllers
                     System.IO.File.Delete(imagePath);
             }
 
-           
+
             if (!string.IsNullOrEmpty(product.Thumbnails))
             {
                 var thumbnails = JsonSerializer.Deserialize<List<string>>(product.Thumbnails);
@@ -226,7 +280,6 @@ namespace Sanad.Controllers
 
             return Ok(new { message = "Product deleted successfully" });
         }
-
 
 
     }

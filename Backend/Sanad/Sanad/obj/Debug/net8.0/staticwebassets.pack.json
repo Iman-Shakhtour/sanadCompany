@@ -1,48 +1,140 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Lenovo\\Desktop\\Sanad-Project\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\1.jpg",
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\03176edc-6b85-48e7-8126-5db13b12f6f2.png",
+      "PackagePath": "staticwebassets\\ProductImages\\03176edc-6b85-48e7-8126-5db13b12f6f2.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\1.jpg",
       "PackagePath": "staticwebassets\\ProductImages\\1.jpg"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\Desktop\\Sanad-Project\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\184aef5e-9486-4a63-8b6f-42610ee73f57.jpg",
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\1253bcee-79ba-4222-8742-080cb7e4dcb0.png",
+      "PackagePath": "staticwebassets\\ProductImages\\1253bcee-79ba-4222-8742-080cb7e4dcb0.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\161e1ed3-3adb-4488-8c70-6282681fa376.png",
+      "PackagePath": "staticwebassets\\ProductImages\\161e1ed3-3adb-4488-8c70-6282681fa376.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\184aef5e-9486-4a63-8b6f-42610ee73f57.jpg",
       "PackagePath": "staticwebassets\\ProductImages\\184aef5e-9486-4a63-8b6f-42610ee73f57.jpg"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\Desktop\\Sanad-Project\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\2.jpg",
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\2.jpg",
       "PackagePath": "staticwebassets\\ProductImages\\2.jpg"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\Desktop\\Sanad-Project\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\2b06daff-ec5b-4727-b6c7-d30087e8f18e.jpeg",
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\24b43c60-27ea-4ee9-9e44-9ccdbcbaf56b.png",
+      "PackagePath": "staticwebassets\\ProductImages\\24b43c60-27ea-4ee9-9e44-9ccdbcbaf56b.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\2af06f83-0289-4c5d-9b2d-c7de4b74c5fb.png",
+      "PackagePath": "staticwebassets\\ProductImages\\2af06f83-0289-4c5d-9b2d-c7de4b74c5fb.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\2b06daff-ec5b-4727-b6c7-d30087e8f18e.jpeg",
       "PackagePath": "staticwebassets\\ProductImages\\2b06daff-ec5b-4727-b6c7-d30087e8f18e.jpeg"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\Desktop\\Sanad-Project\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\3.jpg",
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\3.jpg",
       "PackagePath": "staticwebassets\\ProductImages\\3.jpg"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\Desktop\\Sanad-Project\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\4.jpg",
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\31a088b6-dbf8-4d15-851b-5baf116a7878.png",
+      "PackagePath": "staticwebassets\\ProductImages\\31a088b6-dbf8-4d15-851b-5baf116a7878.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\3f3c6e71-d594-470e-88d0-383ab54ef9b7.png",
+      "PackagePath": "staticwebassets\\ProductImages\\3f3c6e71-d594-470e-88d0-383ab54ef9b7.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\4.jpg",
       "PackagePath": "staticwebassets\\ProductImages\\4.jpg"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\Desktop\\Sanad-Project\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\5.jpg",
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\4e352d63-d6be-458b-a32f-1c50b346b5bd.png",
+      "PackagePath": "staticwebassets\\ProductImages\\4e352d63-d6be-458b-a32f-1c50b346b5bd.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\5.jpg",
       "PackagePath": "staticwebassets\\ProductImages\\5.jpg"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\Desktop\\Sanad-Project\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\6680e6fe-087e-44ad-a0c6-130218946179.jpeg",
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\661d1418-560d-4986-9304-87009350e87c.png",
+      "PackagePath": "staticwebassets\\ProductImages\\661d1418-560d-4986-9304-87009350e87c.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\6680e6fe-087e-44ad-a0c6-130218946179.jpeg",
       "PackagePath": "staticwebassets\\ProductImages\\6680e6fe-087e-44ad-a0c6-130218946179.jpeg"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\Desktop\\Sanad-Project\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\d10681a2-916d-465d-a84d-d6e4aae043d3.jpeg",
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\6b585d9e-cb57-4143-a65e-5e22cfc583fc.png",
+      "PackagePath": "staticwebassets\\ProductImages\\6b585d9e-cb57-4143-a65e-5e22cfc583fc.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\7f6538fc-1428-455c-b68e-f2be84a79093.png",
+      "PackagePath": "staticwebassets\\ProductImages\\7f6538fc-1428-455c-b68e-f2be84a79093.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\8b4a3599-44c2-43b8-aa09-b1d225f20ef3.png",
+      "PackagePath": "staticwebassets\\ProductImages\\8b4a3599-44c2-43b8-aa09-b1d225f20ef3.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\9899434a-5364-4b50-be35-fcf5083d7e8f.png",
+      "PackagePath": "staticwebassets\\ProductImages\\9899434a-5364-4b50-be35-fcf5083d7e8f.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\a49d8908-03e2-403b-901b-e4e27a0d3912.png",
+      "PackagePath": "staticwebassets\\ProductImages\\a49d8908-03e2-403b-901b-e4e27a0d3912.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\bc596e04-277e-43d2-8908-631b2549bdd9.png",
+      "PackagePath": "staticwebassets\\ProductImages\\bc596e04-277e-43d2-8908-631b2549bdd9.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\c74d8806-f79e-4374-9c38-d310a3381cde.png",
+      "PackagePath": "staticwebassets\\ProductImages\\c74d8806-f79e-4374-9c38-d310a3381cde.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\ce58f5b8-3905-4aaf-9234-c4cad565a5f9.png",
+      "PackagePath": "staticwebassets\\ProductImages\\ce58f5b8-3905-4aaf-9234-c4cad565a5f9.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\d10681a2-916d-465d-a84d-d6e4aae043d3.jpeg",
       "PackagePath": "staticwebassets\\ProductImages\\d10681a2-916d-465d-a84d-d6e4aae043d3.jpeg"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\Desktop\\Sanad-Project\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\images.jpg",
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\ec9f3962-2908-45ed-83ef-f6d9b7678a38.png",
+      "PackagePath": "staticwebassets\\ProductImages\\ec9f3962-2908-45ed-83ef-f6d9b7678a38.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\ff05a0a1-c44f-42c2-9f58-8975c6967b4b.png",
+      "PackagePath": "staticwebassets\\ProductImages\\ff05a0a1-c44f-42c2-9f58-8975c6967b4b.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\ff6b6061-7304-41e9-8651-6d7a68ebff93.png",
+      "PackagePath": "staticwebassets\\ProductImages\\ff6b6061-7304-41e9-8651-6d7a68ebff93.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\images.jpg",
       "PackagePath": "staticwebassets\\ProductImages\\images.jpg"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\Desktop\\Sanad-Project\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\it-company-ahmedabad.jpeg",
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\it-company-ahmedabad.jpeg",
       "PackagePath": "staticwebassets\\ProductImages\\it-company-ahmedabad.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ServiceImages\\0a6b346d-8dee-4070-896e-1bc1bc9bc9fa.png",
+      "PackagePath": "staticwebassets\\ServiceImages\\0a6b346d-8dee-4070-896e-1bc1bc9bc9fa.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ServiceImages\\57798c6a-db1f-4c56-9e07-f8a9ecc9f6f2.png",
+      "PackagePath": "staticwebassets\\ServiceImages\\57798c6a-db1f-4c56-9e07-f8a9ecc9f6f2.png"
+    },
+    {
+      "Id": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ServiceImages\\b61ce3a3-431c-4d79-94a4-8a62549392f5.png",
+      "PackagePath": "staticwebassets\\ServiceImages\\b61ce3a3-431c-4d79-94a4-8a62549392f5.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Sanad.Microsoft.AspNetCore.StaticWebAssets.props",
