@@ -10,20 +10,23 @@ body {
 /* header */
 .navbar {
     background-color: #4175B0;
-    position: fixed; /* جعل الشريط ثابتًا */
-    top: 0; /* لصق في أعلى الشاشة */
-    width: 100%; /* يمتد على عرض الشاشة الكامل */
-    z-index: 1000; /* لضمان أن يكون فوق المحتوى الأخرى */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .logo-navbar {
     width: 90px;
     height: 90px;
+    margin-right: 20px; /* إضافة مسافة */
 }
+
 .ar-en {
     transition: color 0.5s linear;
     left: 120px;
-    top: 40px;
+    top: 30px; /* تعديل الموقع العلوي */
+    padding: 5px 10px; /* إضافة مسافة داخلية */
 }
 .ar-en:hover {
     color: white !important;
