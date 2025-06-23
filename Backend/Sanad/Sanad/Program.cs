@@ -1,4 +1,3 @@
-
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Sanad.Data;
@@ -71,6 +70,7 @@ namespace Sanad
                 var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
                 ServicesSeeders.Seed(context);
                 ProductsSeeders.Seed(context);
+                PartnersSeeder.Seed(context); // أضف هذا السطر هنا
             }
 
             // Configure the HTTP request pipeline.

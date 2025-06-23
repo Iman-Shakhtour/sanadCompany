@@ -29,6 +29,7 @@ namespace Sanad.Data
         }
         public DbSet<Service> Services { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Partner> Partners { get; set; }
 
     }
 }

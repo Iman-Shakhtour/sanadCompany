@@ -1,0 +1,19 @@
+.partners-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.partner-card {
+    background: #222;
+    color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    width: 180px;
+}
+.partner-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
