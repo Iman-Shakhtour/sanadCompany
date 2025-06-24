@@ -329,6 +329,8 @@ header {
   box-shadow: 0 20px 40px rgba(255, 255, 255, 0.25);
   z-index: 10;
 }
+
+
  @media (max-width: 576px) {
     #productTabs .nav-link {
       white-space: nowrap;
@@ -336,6 +338,7 @@ header {
       padding: 0.5rem 0.75rem;
     }
   }
+  
 
 /* #productTabsContent .product-card .card-img-top {
   transition: transform 0.35s ease;
@@ -604,3 +607,25 @@ footer a.btn:hover {
   margin-left: auto !important;
   max-width: 100% !important;
 }
+
+
+#all-products,
+#cat-*/ {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 0;
+}
+
+#all-products > .product-card,
+#cat-* > .product-card {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  #all-products > .product-card,
+  #cat-* > .product-card {
+    width: 33.3333%;
+  }
+}
+
+

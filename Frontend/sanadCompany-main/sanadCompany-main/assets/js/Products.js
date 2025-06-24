@@ -13,19 +13,21 @@
   const contentContainer = document.getElementById("productTabsContent");
 
   // أول تبويب: "الكل"
-  const allTabId = "all-products";
-  tabsContainer.innerHTML = `
-      <li class="nav-item">
-      <button class="nav-link active text-secondary" type="button" onclick="filterProductsTab('${allTabId}', this)">
-        ${lang === "ar" ? "الكل" : "All"}
-      </button>
-    </li>
-  `;
+  const allTabId = "all-products-tab"; // لتفادي التداخل
+const allContainerId = "all-products-container"; // لتوحيد التسمية مثل باقي التبويبات
+tabsContainer.innerHTML = `
+  <li class="nav-item">
+    <button class="nav-link active text-secondary" type="button" onclick="filterProductsTab('${allTabId}', this)">
+      ${lang === "ar" ? "الكل" : "All"}
+    </button>
+  </li>
+`;
 contentContainer.innerHTML = `
-    <div class="tab-pane fade show active" id="${allTabId}" role="tabpanel">
-      <div class="row g-4" id="${allTabId}-container"></div>
-    </div>
-  `;
+  <div class="tab-pane fade show active" id="${allTabId}" role="tabpanel">
+    <div class="row g-4" id="${allContainerId}"></div>
+  </div>
+`;
+
 
 
 
@@ -59,7 +61,7 @@ contentContainer.innerHTML = `
       });
 
       // أخيرًا حمّل الكل
-      loadProducts(`${BASE}?lang=${lang}`, `${allTabId}-container`);
+    loadProducts(`${BASE}?lang=${lang}`, allContainerId);
     })
     .catch(err => console.error("Error loading categories:", err));
 });

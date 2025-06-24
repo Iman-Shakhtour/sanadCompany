@@ -6,11 +6,11 @@
         <title>سند | بوابتك نحو التميّز الرقمي المدعوم بالذكاء الاصطناعي</title>
 
     <link href="../assets/img/logo.jpg" rel="shortcut icon" type="image/x-icon">
-      <link href="../assets/lang-toggle.js" rel="preload" as="script">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/style.css">
+   
 </head>
 <body>
     <!-- start header-->
@@ -292,7 +292,7 @@
       </div>
 
       <!-- تبويبات التنقل -->
-      <ul class="nav nav-tabs justify-content-center mb-4 px-0" id="productTabs" role="tablist">
+      <ul id="productTabs" class="nav nav-tabs justify-content-center mb-4 px-0" role="tablist">
         <!-- <li class="nav-item" role="presentation">
           <button class="nav-link active text-secondary" id="tab-all" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true">الكل</button>
         </li>
@@ -312,79 +312,11 @@
       </ul>
 
       <!-- محتوى التبويبات -->
-      <div class="tab-content" id="productTabsContent">
+      <div id="productTabsContent" class="tab-content">
         <!-- تبويب الكل -->
         <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="tab-all">
           <div class="row g-4" id="all-products">
-            <!-- تكرار المنتجات -->
-            <!-- ابدأ بإضافة المنتج -->
-            <!-- كرر هذا القسم حسب عدد المنتجات -->
-            <!-- مثال لمنتج -->
-            <!-- <div class="col-md-4 product-card">
-              <div class="card h-100 bg-dark text-white">
-                <img src="../testImg/1.jpg" class="card-img-top" alt="صورة منتج">
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title">تسريع الوطنية</h5>
-                  <p class="card-text">تحويل الابتكار إلى أعمال عبر حلول يقودها رياديون ناشئون.</p>
-                  <a href="prodacts.html" class="btn btn-outline-light mt-auto">اقرأ المزيد</a>
-                </div>
-              </div>
-            </div> -->
-            <!-- منتج 2 -->
-<!-- <div class="col-md-4 product-card">
-  <div class="card h-100 bg-dark text-white">
-    <img src="../testImg/2.jpg" class="card-img-top" alt="تطبيق صحي">
-    <div class="card-body d-flex flex-column">
-      <h5 class="card-title">تطبيق صحة بلس</h5>
-      <p class="card-text">تطبيق لمراقبة الصحة واللياقة، مع اقتراحات غذائية وتمارين مخصصة.</p>
-      <a href="prodacts.html" class="btn btn-outline-light mt-auto">اقرأ المزيد</a>
-    </div>
-  </div>
-</div> -->
-            <!-- ... نسخ إضافية -->
-             <!-- <div class="col-md-4 product-card">
-              <div class="card h-100 bg-dark text-white">
-                <img src="../testImg/3.jpg" class="card-img-top" alt="صورة منتج">
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title">تسريع الوطنية</h5>
-                  <p class="card-text">تحويل الابتكار إلى أعمال عبر حلول يقودها رياديون ناشئون.</p>
-                  <a href="prodacts.html" class="btn btn-outline-light mt-auto">اقرأ المزيد</a>
-                </div>
-              </div>
-            </div> -->
-            <!-- منتج 4 -->
-<!-- <div class="col-md-4 product-card">
-  <div class="card h-100 bg-dark text-white">
-    <img src="../testImg/3.jpg" class="card-img-top" alt="واقع افتراضي تعليمي">
-    <div class="card-body d-flex flex-column">
-      <h5 class="card-title">أكاديمية الواقع الافتراضي</h5>
-      <p class="card-text">بيئة تعليمية غامرة باستخدام الواقع الافتراضي لتجارب تعلم متقدمة.</p>
-      <a href="prodacts.html" class="btn btn-outline-light mt-auto">اقرأ المزيد</a>
-    </div>
-  </div>
-</div> -->
-            <!-- <div class="col-md-4 product-card">
-              <div class="card h-100 bg-dark text-white">
-                <img src="../testImg/4.jpg" class="card-img-top" alt="صورة منتج">
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title">تسريع الوطنية</h5>
-                  <p class="card-text">تحويل الابتكار إلى أعمال عبر حلول يقودها رياديون ناشئون.</p>
-                  <a href="prodacts.html" class="btn btn-outline-light mt-auto">اقرأ المزيد</a>
-                </div>
-              </div>
-            </div> -->
-           <!-- منتج 5 -->
-<!-- <div class="col-md-4 product-card">
-  <div class="card h-100 bg-dark text-white">
-    <img src="../testImg/5.jpg" class="card-img-top" alt="نظام إدارة مشاريع">
-    <div class="card-body d-flex flex-column">
-      <h5 class="card-title">نظام إدارة المشاريع الذكي</h5>
-      <p class="card-text">أداة تنظيم المشاريع والمهام بشكل ذكي مع تتبع الأداء وتحليله.</p>
-      <a href="prodacts.html" class="btn btn-outline-light mt-auto">اقرأ المزيد</a>
-    </div>
-  </div>
-</div> -->
-            
+            <!-- هنا سيضيف الجافاسكريبت المنتجات تلقائياً -->
           </div>
         </div>
 
@@ -781,46 +713,5 @@
     <script src="../assets/js/Services.js"></script>
      <script src="../assets/js/Products.js"></script>
      <script src="../assets/js/contact.js"></script>
-     <!-- <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const lang = 'ar'; // تكون متغيّرة حسب اختيارك للّغة
-  const tabsContainer = document.getElementById('productTabs');
-
-  // أوّلاً: أضف "الكل"
-  const allLi = document.createElement('li');
-  allLi.className = 'nav-item';
-  allLi.innerHTML = `
-    <button 
-      class="nav-link active text-secondary" 
-      type="button" 
-      onclick="filterProducts('all')"
-    >
-      الكل
-    </button>`;
-  tabsContainer.appendChild(allLi);
-
-  // بعدين: fetch للـ categories من API
-  fetch(`http://localhost:5261/api/categories?lang=${lang}`)
-    .then(res => res.json())
-    .then(cats => {
-      cats.forEach(cat => {
-        const li = document.createElement('li');
-        li.className = 'nav-item';
-        li.innerHTML = `
-          <button 
-            class="nav-link text-secondary" 
-            type="button" 
-            onclick="filterProducts('${cat.code}')"
-          >
-            ${cat.name}
-          </button>`;
-        tabsContainer.appendChild(li);
-      });
-    })
-    .catch(err => console.error(err));
-});
-</script>
- -->
-
 </body>
 </html>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DDy27W24CtpmuOh/GYaPvGX6ouIvqPWmKPspB0C60U4=",
+  "Hash": "aTASexm6SPrVo9/0xRY8fjTD3bGfhHrMUyopHGFidWY=",
   "Source": "Sanad",
   "BasePath": "_content/Sanad",
   "Mode": "Default",
@@ -471,6 +471,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ProductImages\\7f6538fc-1428-455c-b68e-f2be84a79093.png"
+    },
+    {
+      "Identity": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\82352518-2fe6-41b0-907c-3a731ae3ec4e.png",
+      "SourceId": "Sanad",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\",
+      "BasePath": "_content/Sanad",
+      "RelativePath": "ProductImages/82352518-2fe6-41b0-907c-3a731ae3ec4e.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProductImages\\82352518-2fe6-41b0-907c-3a731ae3ec4e.png"
     },
     {
       "Identity": "C:\\Users\\MIX\\sanadCompany\\Backend\\Sanad\\Sanad\\wwwroot\\ProductImages\\8b4a3599-44c2-43b8-aa09-b1d225f20ef3.png",
