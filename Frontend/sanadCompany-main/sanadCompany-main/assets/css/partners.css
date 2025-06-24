@@ -1,19 +1,267 @@
-.partners-grid {
+/* ===== 1) الخط الأساسي والخلفية العامة ===== */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #19375C;
+    font-family: 'Cairo', sans-serif;
+    scroll-behavior: auto;       /* نعطل behavior العادي */
+    padding-top: 60px;           /* مسافة أعلى لتجنب التداخل مع الـ navbar الثابت */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ===== 2) تثبيت الفوتر أسفل الصفحة ===== */
+html, body {
+    height: 100%;
+}
+main {
+    flex: 1 0 auto;
+}
+.footer {
+    flex-shrink: 0;
+}
+
+/* ===== 3) تنسيق قسم شركاؤنا ===== */
+#partners {
+    background-color: #19375C; /* الخلفية الداكنة */
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+#partners h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+#partners .carousel-inner .carousel-item img {
+    max-height: 80px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+#partners .carousel-inner .carousel-item img:hover {
+    transform: scale(1.05);
+}
+#partners .carousel-control-prev-icon,
+#partners .carousel-control-next-icon {
+    background-color: #3B5574;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-size: 1.5rem 1.5rem;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#partners .carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg fill='%23fff' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M11 1L3 8l8 7V1z'/%3e%3c/svg%3e");
+}
+#partners .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg fill='%23fff' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5 1l8 7-8 7V1z'/%3e%3c/svg%3e");
+}
+#partners .btn {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 12px 35px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+#partners .btn:hover {
+    background-color: white;
+    color: #19375C;
+}
+#partners .carousel-indicators {
+    bottom: -50px;
+}
+@media (max-width: 576px) {
+    #partners .carousel-control-prev-icon,
+    #partners .carousel-control-next-icon {
+        width: 2rem;
+        height: 2rem;
+        background-size: 1rem 1rem;
+    }
+    #partners h2 {
+        font-size: 1.8rem;
+    }
+    #partners .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+@media (min-width: 768px) {
+    #partners .carousel-inner .carousel-item img {
+        max-height: 100px;
+    }
+}
+
+/* ===== 4) header (navbar ثابت وأبعاده الجديدة) ===== */
+.navbar {
+    background-color: #4175B0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.logo-navbar {
+    width: 90px;    /* من 60px إلى 90px */
+    height: 90px;
+    margin-right: 20px;
+}
+.ar-en {
+    position: absolute;
+    left: 120px;
+    top: 40px;     /* تعديل الموضع العلوي */
+    padding: 5px 10px;
+    transition: color 0.5s linear;
+}
+.ar-en:hover {
+    color: white !important;
+}
+.navbar a {
+    transition: all 0.5s linear;
+}
+
+/* ===== 5) أزرار الدخول واستعراض الخدمات ===== */
+.sanad-system {
+    transition: all 0.3s;
+    background-color: #254367;
+    border: none;
+}
+.btn-service {
+    transition: all 0.3s;
+    background-color: #254164;
+    border: none;
+}
+
+/* ===== 6) تحسين navbar في الشاشات الصغيرة ===== */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        padding: 1rem;
+        border-radius: 0 0 12px 12px;
+        transition: all 0.4s ease-in-out;
+        margin-top: 10px;
+    }
+    .navbar-nav .nav-item {
+        margin-bottom: 10px;
+    }
+    .navbar-nav .nav-link {
+        color: white !important;
+        border-radius: 8px;
+        text-align: center;
+        padding: 10px;
+        font-size: 1.1rem;
+        transition: background 0.3s;
+    }
+    .navbar-nav .nav-link:hover {
+        background-color: #444;
+    }
+}
+
+/* ===== 7) تحسينات عامة لباقي الأقسام ===== */
+/* عنوان الصفحة الرئيسية */
+.titleSetion h1 {
+    font-size: 60px;
+}
+.titleSetion p {
+    font-size: 20px;
+}
+@media (max-width: 1200px) {
+    .titleSetion h1 {
+        font-size: 40px;
+    }
+}
+@media (max-width: 768px) {
+    .titleSetion h1,
+    .titleSetion p {
+        text-align: center;
+    }
+}
+
+/* تواصل معنا */
+.contact {
+    background-color: #19375C;
+}
+.contact input,
+.contact textarea {
+    background-color: #395170;
+}
+.contact input:focus,
+.contact textarea:focus {
+    color: white !important;
+    background-color: #19375C !important;
+}
+.contact button[type="submit"] {
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+.contact button[type="submit"]:hover {
+    background-color: #4175B0;
+    color: white;
+    box-shadow: 0 4px 12px rgba(65, 117, 176, 0.4);
+}
+
+/* footer */
+.footer {
+    background-color: #4175B0;
+    padding: 40px 0;
+}
+.footer a {
+    text-decoration: none;
+    color: #212529;
+    transition: color 0.3s ease;
+}
+.footer a:hover {
+    color: #ffffff !important;
+}
+.social-icon {
+    font-size: 1.2rem;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+.social-icon:hover {
+    color: #ffffff !important;
+}
+footer a.btn {
+    transition: all 0.3s ease;
+}
+footer a.btn:hover {
+    background-color: #395170;
+}
+
+/* محاذاة قسم accelerate */
+#accelerate .content-wrap-2 {
+    text-align: right !important;
+    margin-right: 0 !important;
+    margin-left: auto !important;
+    padding-right: 0 !important;
+}
+#accelerate .narrow {
+    margin-right: 0 !important;
+    margin-left: auto !important;
+    max-width: 100% !important;
+}
+
+/* منتجاتنا */
+#all-products,
+#cat-* {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1.5rem 0;
 }
-.partner-card {
-    background: #222;
-    color: #fff;
-    padding: 16px;
-    border-radius: 8px;
-    text-align: center;
-    width: 180px;
+#all-products > .product-card,
+#cat-* > .product-card {
+    width: 100%;
 }
-.partner-logo {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    margin-bottom: 10px;
+@media (min-width: 768px) {
+    #all-products > .product-card,
+    #cat-* > .product-card {
+        width: 33.3333%;
+    }
 }

@@ -47,6 +47,7 @@ namespace Sanad.Controllers
             var partner = new Partner
             {
                 Name = dto.Name,
+                NameAr = dto.NameAr,
                 LogoUrl = logoFileName,
                 Website = dto.Website
             };
@@ -66,6 +67,8 @@ namespace Sanad.Controllers
 
             if (!string.IsNullOrEmpty(dto.Name))
                 partner.Name = dto.Name;
+            if (!string.IsNullOrEmpty(dto.NameAr))
+                partner.NameAr = dto.NameAr;
 
             if (!string.IsNullOrEmpty(dto.Website))
                 partner.Website = dto.Website;

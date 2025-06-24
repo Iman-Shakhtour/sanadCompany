@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Sanad")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c64637b6f74234d6ea2af1c8670c74d1ff4f99e7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+22dcab8bc0d37d09f3a05faa1df4928c24c65c4b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Sanad")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Sanad")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

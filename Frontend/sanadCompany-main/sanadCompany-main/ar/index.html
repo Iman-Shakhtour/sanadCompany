@@ -48,7 +48,7 @@
               <a class="nav-link text-white" href="prodacts.html">منتجاتنا</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" onclick="slowScroll(event, 'partners')" href="#partners">شركاؤنا</a>
+              <a class="nav-link text-white"  href="partners.html">شركاؤنا</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="contact.html">تواصل معنا</a>
@@ -470,65 +470,31 @@
 </div>
  <!-- end parallax img -->
   <!-- start partners -->
+<!-- start partners -->
 <section id="partners" class="partners-section text-center">
   <h2 class="partners-title">شركاؤنا</h2>
 
-  <div id="partnersCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-    <!-- Indicators -->
-    <div class="carousel-indicators mb-4">
-      <button type="button" data-bs-target="#partnersCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="الشريحة 1"></button>
-      <button type="button" data-bs-target="#partnersCarousel" data-bs-slide-to="1" aria-label="الشريحة 2"></button>
+   <div id="partnersGrid" class="row g-4 mt-4">
+    <div id="carouselPartners" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+  <div class="carousel-inner" id="carouselInner"></div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselPartners" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">السابق</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselPartners" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">التالي</span>
+  </button>
+</div>
+
     </div>
 
-    <!-- Slides -->
-    <div class="carousel-inner">
-      <!-- الشريحة 1 -->
-      <div class="carousel-item active">
-        <div class="row mx-5">
-          <div class="col-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" class="img-fluid" alt="مايكروسوفت">
-          </div>
-          <div class="col-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" class="img-fluid" alt="مايكروسوفت">
-          </div>
-          <div class="col-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" class="img-fluid" alt="مايكروسوفت">
-          </div>
-        </div>
-      </div>
-
-      <!-- الشريحة 2 -->
-      <div class="carousel-item">
-        <div class="row mx-5">
-          <div class="col-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" class="img-fluid" alt="أبل">
-          </div>
-          <div class="col-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" class="img-fluid" alt="أبل">
-          </div>
-          <div class="col-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" class="img-fluid" alt="أبل">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#partnersCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">السابق</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#partnersCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">التالي</span>
-    </button>
-  </div>
-
-  <!-- زر انضم إلى شركائنا -->
   <div class="mt-5">
     <a href="#contact" class="btn btn-outline-light btn-lg">انضم إلى شركائنا</a>
   </div>
 </section>
+
   <!-- end partners -->
 <!--start blog section-->
 <!-- <div class="blog-section py-5">
@@ -697,10 +663,6 @@
 
 
 
-
-
-
-
     <!-- AOS JS -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
@@ -711,7 +673,8 @@
     <script src="../assets/js/script.js"></script>
     <script src="../assets/js/lang-toggle.js"></script>
     <script src="../assets/js/Services.js"></script>
-     <script src="../assets/js/Products.js"></script>
-     <script src="../assets/js/contact.js"></script>
+    <script src="../assets/js/Products.js"></script>
+    <script src="../assets/js/contact.js"></script>
+    <script src="../assets/js/partners.js"></script>
 </body>
 </html>
