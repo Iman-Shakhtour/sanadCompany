@@ -6,7 +6,7 @@ using System.Text.Json;
 
 namespace Sanad.Data
 {
-    public class ApplicationDbContext: IdentityDbContext<AppUser>
+    public class ApplicationDbContext : IdentityDbContext<AppUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
        : base(options)
@@ -25,11 +25,15 @@ namespace Sanad.Data
                 .Metadata.SetValueComparer(new ValueComparer<List<string>>(
                     (c1, c2) => c1.SequenceEqual(c2),
                     c => c.Aggregate(0, (a, v) => HashCode.Combine(a, v.GetHashCode())),
-                    c => c.ToList())); 
+                    c => c.ToList()));
         }
         public DbSet<Service> Services { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Partner> Partners { get; set; }
+
+        public DbSet<Category> Categories { get; set; }
+
+
 
     }
 }

@@ -293,7 +293,7 @@
 
       <!-- تبويبات التنقل -->
       <ul class="nav nav-tabs justify-content-center mb-4 px-0" id="productTabs" role="tablist">
-        <li class="nav-item" role="presentation">
+        <!-- <li class="nav-item" role="presentation">
           <button class="nav-link active text-secondary" id="tab-all" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true">الكل</button>
         </li>
         <li class="nav-item" role="presentation">
@@ -307,7 +307,8 @@
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link text-secondary" id="tab-health" data-bs-toggle="tab" data-bs-target="#health" type="button" role="tab" aria-controls="health" aria-selected="false">التكنولوجيا الصحية</button>
-        </li>
+        </li> -->
+        
       </ul>
 
       <!-- محتوى التبويبات -->
@@ -778,8 +779,48 @@
     <script src="../assets/js/script.js"></script>
     <script src="../assets/js/lang-toggle.js"></script>
     <script src="../assets/js/Services.js"></script>
-     <script src="./assets/js/Products.js"></script>
+     <script src="../assets/js/Products.js"></script>
      <script src="../assets/js/contact.js"></script>
+     <!-- <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const lang = 'ar'; // تكون متغيّرة حسب اختيارك للّغة
+  const tabsContainer = document.getElementById('productTabs');
+
+  // أوّلاً: أضف "الكل"
+  const allLi = document.createElement('li');
+  allLi.className = 'nav-item';
+  allLi.innerHTML = `
+    <button 
+      class="nav-link active text-secondary" 
+      type="button" 
+      onclick="filterProducts('all')"
+    >
+      الكل
+    </button>`;
+  tabsContainer.appendChild(allLi);
+
+  // بعدين: fetch للـ categories من API
+  fetch(`http://localhost:5261/api/categories?lang=${lang}`)
+    .then(res => res.json())
+    .then(cats => {
+      cats.forEach(cat => {
+        const li = document.createElement('li');
+        li.className = 'nav-item';
+        li.innerHTML = `
+          <button 
+            class="nav-link text-secondary" 
+            type="button" 
+            onclick="filterProducts('${cat.code}')"
+          >
+            ${cat.name}
+          </button>`;
+        tabsContainer.appendChild(li);
+      });
+    })
+    .catch(err => console.error(err));
+});
+</script>
+ -->
 
 </body>
 </html>
